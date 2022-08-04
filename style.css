@@ -1,11 +1,21 @@
+h1 {
+    font-size: 52px;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #container {
     position: relative;
-    top: 50px;
+    top: 30px;
     margin: auto;
     padding: 0;
-    height: 960px;
-    width: 960px;
+    height: 480px;
+    width: 480px;
     border: none;
+    outline: 2px solid black;
+    font-size: 0;
 }
 
 .grid {
@@ -13,4 +23,9 @@
     padding: 0;
     border: none;
     display: inline-block;
+    outline: 1px solid black;
+    height: 30px;
+    width: 30px;
+    background-color: white;
 }
+
