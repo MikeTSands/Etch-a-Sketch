@@ -8,6 +8,7 @@ h1 {
 
 #container {
     position: relative;
+    display: grid;
     top: 30px;
     margin: auto;
     padding: 0;
@@ -22,10 +23,8 @@ h1 {
     margin: 0;
     padding: 0;
     border: none;
-    display: inline-block;
     outline: 1px solid black;
-    height: 30px;
-    width: 30px;
     background-color: white;
+  
 }
 

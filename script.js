@@ -1,34 +1,26 @@
-//create variables for later use
-let container = document.getElementById('container');
+function createBoard(size) {
+    let container = document.getElementById('container');
+    container.style.gridTemplateColumns = "repeat(`${size}` , 1fr)";
+    container.style.gridTemplateRows = "repeat(`${size}` , 1fr)";
 
-
-
-//function to build a grid in the container
-
-function buildGrid(x){
-    for (let rows = 0 ; rows < x ; rows++){
-        for (let columns = 0 ; columns < x ; columns++){
-            let child = document.createElement("div");
-            child.classList.add("grid");
-            container.append(child);
-        };
-    };
-}
-
-buildGrid(16);
-
-
-//creates function to color the etch-a-sketch
-function changeColor(){
-    let grids = document.getElementsByClassName('grid');
-    for (const grid of grids){
-        grid.addEventListener('mouseover', function(){
-            grid.style.backgroundColor =  "black";
-        })
+    let amount = size * size;
+    for (let i = 0 ; i < amount; i++){
+        let square = document.createElement("div");
+        square.classList.add("grid");
+        square.style.height = "(480 / size)px";
+        square.style.width = "(480 / size)px";
+        container.appendChild(square);
     }
 }
 
-changeColor();
+createBoard(16);
+
+
+//creates function to color the etch-a-sketch
+
+
+
+
 
 //need to make button work
 //function to refresh 16x16 grid
@@ -36,10 +28,8 @@ function refreshGrid(){
     let grids = document.getElementsByClassName('grid');
     for (const grid of grids){
         grid.style.backgroundColor = "white";
-        console.log("hello");
     }
-
 }
 
-let button = document.getElementById("button");
 button.addEventListener('click', refreshGrid());
+
