@@ -1,7 +1,7 @@
 function createBoard(size) {
     let container = document.getElementById('container');
-    container.style.gridTemplateColumns = "repeat(`${size}` , 1fr)";
-    container.style.gridTemplateRows = "repeat(`${size}` , 1fr)";
+    container.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
     let amount = size * size;
     for (let i = 0 ; i < amount; i++){
@@ -18,7 +18,16 @@ createBoard(16);
 
 //creates function to color the etch-a-sketch
 
+function changeColour(){
+    let grids = document.getElementsByClassName("grid");
+    for (const grid of grids){
+        grid.addEventListener('mouseover', () => {
+            grid.style.backgroundColor = "black";
+        })
+    }
+}
 
+changeColour();
 
 
 
